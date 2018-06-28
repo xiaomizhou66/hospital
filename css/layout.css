@@ -1,0 +1,142 @@
+/* 初始化边距值 */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 分析首页，top、nav、footer的宽度是整个屏幕宽度，其他的div的宽度与左右边都是有距离的，
+高度的是内容层起来的，（其他的div：获取到宽度是1000px)。
+而且top，nav，footer也只是背景占100%，内容跟其他的div一样是1000px；
+那么这些定宽的div就不要每次都写宽度，可以用一个wrap 的div包括这些内容就ok。
+见html中的编辑*/
+
+.wrap {
+    width: 1000px;
+    margin: 0 auto;
+    /* 这样保证水平居中 */
+    position: relative;
+    /* 为什么设置相对位置?后面有需要设置绝对位置的，
+    所以把父元素弄成相对的 */
+}
+
+/* 设置top的高，宽默认是占100%，不写也行的，里面还有一个div wrap是放置内容的 */
+
+.top {
+    width: 100%;
+    height: 30px;
+    background-color: #f5f5f5;
+}
+
+/* 设置header头部的高，宽默认是占100%，高*/
+
+.header {
+    height: 92px;
+}
+
+.nav {
+    height: 36px;
+    background-color: #60bff2;
+}
+
+/* .nav-menu {
+    width: height:
+} */
+
+.banner {
+    /* 轮播图的宽是需要减去左边的导航菜单的宽度198px ,然后再水平居中显示，
+    这里为什么不能再用warp？？？？这样多乱啊？已经被修改，都用warp方式写！
+   把banner-slider写成这样 margin-left: 198px就ok了;*/
+    /* width: 802px; */
+    height: 414px;
+    /* 这个是什么鬼？？ 
+    因为我们设置的宽度是1000-198px=802px，不设置元素内边距的话，banner就会往左边靠*/
+    padding-top: 9px;
+}
+
+/* 用warp嵌套这些对象，避免运用算法计算得到802，乱七八糟的 ，后期修改不方便*/
+
+.banner-slider {
+    float: left;
+    width: 544px;
+    height: 414px;
+    background-color: #60bf89;
+    margin-left: 198px;
+}
+
+.banner-search {
+    float: right;
+    width: 250px;
+    height: 146px;
+    background-color: #fafafa;
+}
+
+/* 这个float right怎么自动起一行了？因为没有空间了，左边有banner-slider占据，
+banner-help就不会跟banner-news跑到一行去了 */
+
+.banner-help {
+    float: right;
+    width: 250px;
+    height: 255px;
+    background-color: #60bff2;
+    margin-top: 12px;
+}
+
+/* 这里没有设置宽度，而是在里面用一个wrap的div来装里面的子元素 */
+
+.content {
+    padding: 10px 0 38px 0;
+}
+
+.content-tab {
+    float: left;
+    width: 742px;
+    height: 490px;
+    border: 1px solid #c24242;
+}
+
+.content-news,
+.content-close {
+    float: right;
+    width: 248px;
+    height: 236px;
+    border: 1px solid #cccccc;
+}
+
+.content-close {
+    margin-top: 12px;
+    border: 1px solid red;
+}
+
+/* 如果只是这样设计的话，我们的footer会出现在content上方，因为content里面的内容都是浮动的，
+它是没有高度的，这样的话就是不占据空间的，这个时候就要设计一个清楚浮动的效果，
+让footer出现在最下方。 */
+
+/* 教学中是给这个content里面的 三个子元素的父元素wrap 中添加一个属性 clearfix
+div class="warp clearfix",就是谁浮动流给谁的父元素填写清除浮动
+然后css中写下面这顿代码，搞这么麻烦。
+.cleafix:after{
+    content:" ";
+    display:block;
+    height:0;
+    line-height:0;
+    clear: both;
+    zoom:1;
+}*/
+
+/* 我们是在content后面写个空div来清除两边浮动即可 */
+
+.clearfloat {
+    clear: both;
+}
+
+.footer {
+    height: 132px;
+    padding: 25px 0 25px 0;
+    background: color #eceef2;
+    border: 1px solid rebeccapurple;
+}
