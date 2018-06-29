@@ -8,8 +8,9 @@
     <title>Hospital system</title>
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/ui.css">
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-    <script src="home.js"></script>
+
 </head>
 
 <body>
@@ -29,7 +30,15 @@
                 <img src="../img/logo.png" alt="logo">
             </a>
             <div class="search">
-                <div></div>
+                <div>
+                    <select name="" id="" class="ui-search-select">
+                        <option value="hospital" class="select-option">医院</option>
+                        <option value="department" class="select-option">科室</option>
+                        <option value="disease" class="select-option">疾病</option>
+                    </select>
+                </div>
+                <input type="text" placeholder="请输入搜索内容" class="ui-search-input" />
+                <a href="#" class="ui-search-submit"></a>
             </div>
         </div>
     </div>
@@ -245,12 +254,7 @@
 
     </div>
     <a href="#0" class="go-top"></a>
-
-
-
-
-
-
+    <script src="ui-home.js"></script>
 </body>
 
 </html>

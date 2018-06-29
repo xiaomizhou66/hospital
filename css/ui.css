@@ -1,0 +1,38 @@
+.header .search {
+    background: url("../img/ui-search.jpg") no-repeat center;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.header .search .ui-search-select {
+    width: 70px;
+    height: 38px;
+    background: orange;
+    line-height: 38px;
+    padding-left: 14px;
+    border-radius: 3px;
+    float: left;
+}
+
+.header .search .ui-search-select .select-option {
+    background: #ffffff;
+    border: 1px solid gray;
+}
+
+.header .search .ui-search-input {
+    float: left;
+    width: 215px;
+    height: 36px;
+    line-height: 36px;
+    margin: 1px 0;
+}
+
+.header .search .ui-search-submit {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 38px;
+    /* 这里面没有内容，一定不要忘记给高，不然就没有高的， */
+    z-index: 2;
+    cursor: pointer;
+}
