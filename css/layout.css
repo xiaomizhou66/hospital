@@ -1,4 +1,4 @@
-/* 初始化边距值 */
+/* 初始 */
 
 * {
     padding: 0;
@@ -7,6 +7,17 @@
 
 a {
     text-decoration: none;
+}
+
+select,
+input {
+    border: none;
+    outline: none;
+}
+
+ol,
+ul {
+    list-style: none;
 }
 
 /* 分析首页，top、nav、footer的宽度是整个屏幕宽度，其他的div的宽度与左右边都是有距离的，
@@ -71,7 +82,7 @@ a {
 .banner-search {
     float: right;
     width: 250px;
-    height: 146px;
+    height: 255px;
     background-color: #fafafa;
 }
 
@@ -81,8 +92,8 @@ banner-help就不会跟banner-news跑到一行去了 */
 .banner-help {
     float: right;
     width: 250px;
-    height: 255px;
-    background-color: #60bff2;
+    height: 146px;
+    background-color: #fafafa;
     margin-top: 12px;
 }
 
@@ -135,7 +146,7 @@ div class="warp clearfix",就是谁浮动流给谁的父元素填写清除浮动
 }
 
 .footer {
-    height: 132px;
+    height: 70px;
     padding: 25px 0 25px 0;
     background: color #eceef2;
     border: 1px solid rebeccapurple;

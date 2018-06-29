@@ -1,0 +1,36 @@
+<!-- ui组件化 -->
+
+
+
+<!-- 使用jquery插件模式开发ui组件 。
+    把一些通用的组件，挂到jquery对象上去，然后就可以方便的在各个地方去调用
+
+    一、jquery插件模式开发ui组件的方法：
+    ①通过$.extend()来扩展jquery，是在jquery本身去添加方法，或者说是在命名空间去添加方法，
+        $.extend({
+            sayHello:function(){
+                console.log("Hello!")
+            }
+        })
+        $.sayHello();//调用方法
+        功能不足，
+    ②通用$.fn向jquery添加新方法
+        $.fn.blue=function(){
+            this.css("backfroundColor","blue");
+        }
+        $("div").blue(); //调用方法
+        $(".classname").blue();//调用方法
+    ③通过$.widget()应用jquery ui 的部件工厂方式创建（部件，组件一个意思）
+
+
+
+    推荐是使用方法二，方法三比较高级，学会更好，方法一的局限性比较大。
+
+
+
+    二、开发组件，
+    意义：component组件：其实就是封装，把一些公共的行为（事件）或者是界面样式的结构。
+        两个概念，就是行为与样式
+    思路：要做什么？
+    在我们，搞明白我们需要做的组件有几个界面，或者说是状态
+-->

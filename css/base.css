@@ -1,0 +1,406 @@
+/* 不同浏览器的边距可能不一样，要先初始化 */
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* top模块样式 -----------------------------------------------------------------*/
+
+.top {
+    font-size: 13px;
+    line-height: 30px;
+    columns: #868686;
+}
+
+.call {
+    float: left;
+    /* 内边距为了让电话图标位置 */
+    padding-left: 20px;
+    /*  插入背景图片，不平铺，垂直居中，水平偏左 */
+    background: url("../img/icon-call.png") no-repeat center left;
+}
+
+.welcome {
+    float: right;
+}
+
+.welcome p {
+    display: inline;
+    line-height: 16px;
+}
+
+.top a {
+    color: #2da5e1;
+    padding-left: 10px;
+}
+
+/* header模块样式 ----------------------------------------------------------------*/
+
+.header .logo img {
+    width: 402px;
+    height: 74px;
+    padding: 9px 0;
+    /* inline-block 是干嘛？？好像没什么屁用啊？
+    因为教学视频中是对a标签，这个行内元素去定宽高，行内元素是没有宽高的，
+    img虽然是行内元素，但是他同时也可以作为块级元素，具有行内元素的性质，
+    同时也具有块级元素可以设置 宽高的性质，因为这里对img可以不用 注明：display: inline-block*/
+    /*     display: inline-block; */
+}
+
+.header .search {
+    width: 326px;
+    height: 38px;
+    background-color: orange;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -19px;
+    /*  padding: 9px 0; 
+   这样一个padding的话多此一举啊，上边不会改变就是距离-19了，但是下边会填充很丑的，
+   不需要算来算去的，有的时候需要换思路去布局*/
+}
+
+/* nav模块样式 ----------------------------------------------------------------*/
+
+.nav-menu,
+.nav .nav-link {
+    /* 使它拥有行内元素的性质，让其他元素出现在它右边 */
+    display: inline-block;
+    /* nav设置的高度为height: 36px; */
+    line-height: 36px;
+    padding-left: 30px;
+    font-size: 16px;
+    color: white;
+}
+
+.nav a:hover {
+    color: #d7f3ff;
+}
+
+.nav-menu {
+    width: 198px;
+    text-align: center;
+    padding: 0;
+    background-color: #2da5e1;
+}
+
+.menu-list {
+    background-color: #2da5e1;
+    /* 同banner的height: 414px;  + padding-top: 9px; */
+    height: 423px;
+}
+
+/* banner模块样式 ----------------------------------------------------------------*/
+
+.banner-search .caption,
+.banner-help .caption {
+    height: 22px;
+    line-height: 22px;
+    padding: 10px 0 15px 28px;
+    text-align: center;
+    color: #fec009;
+    position: relative;
+}
+
+.banner-search .caption img,
+.banner-help .caption img {
+    width: 22px;
+    height: 22px;
+    line-height: 36px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -46px;
+}
+
+.banner-search .form {
+    height: 150px;
+    text-align: center;
+    padding-bottom: 9px;
+}
+
+.banner-search .form .form-line {
+    width: 170px;
+    height: 26px;
+    line-height: 26px;
+    padding: 2px 0;
+    font-size: 12px;
+    color: #666666;
+    border: 1px solid #dcdddd;
+    z-index: 1;
+    margin-top: 9px;
+}
+
+.banner-search .btn-submit {
+    height: 32px;
+    text-align: center;
+}
+
+.banner-search .btn-submit .btn-search {
+    width: 108px;
+    height: 33px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #fecd09;
+    border-radius: 3px;
+}
+
+.banner-help {
+    color: #00b3ea;
+    text-align: center;
+}
+
+.banner-help .caption {
+    color: #00b3ea;
+}
+
+.banner-help .help-link {
+    display: inline-block;
+    width: 86px;
+    height: 26px;
+    line-height: 26px;
+    color: #00b3ea;
+    font-size: 14px;
+    padding: 4px 0px 4px 0px;
+}
+
+/* content模块样式 ----------------------------------------------------------------*/
+
+.content {
+    background-color: #ffffff;
+    border: 1px solid #f4f6fa;
+}
+
+.content-news,
+.content-close {
+    background-color: #ffffff;
+    border: 1px solid #f4f6fa;
+}
+
+.content-news .caption,
+.content-close .caption {
+    height: 38px;
+    line-height: 38px;
+    font-size: 15px;
+    background-color: #f4f6fa;
+    padding-left: 20px;
+}
+
+.content-news .caption .title {
+    display: inline-block;
+    color: #fec009;
+}
+
+.content-close .caption .title {
+    display: inline-block;
+    color: #00b3ea;
+}
+
+.content-news .caption .more,
+.content-close .caption .more {
+    float: right;
+    display: inline-block;
+    padding-right: 22px;
+    color: #868686;
+    font-size: 12px;
+}
+
+.content-news .ol-list,
+.content-close .ol-list {
+    padding: 15px 20px 13px 35px;
+    line-height: 29px;
+    font-size: 12px;
+    list-style-type: decimal;
+}
+
+.content-news .ol-list {
+    color: #fec009;
+}
+
+.content-close .ol-list {
+    color: #00b3ea;
+}
+
+.content-news .ol-list a,
+.content-close .ol-list a {
+    color: #969696;
+}
+
+.content .content-tab {
+    background: none;
+    border: none;
+}
+
+.content-tab .caption {
+    height: 34px;
+    line-height: 34px;
+    background-color: #f5f6fa;
+}
+
+.content-tab .caption .title,
+.content-tab .caption .title {
+    display: inline-block;
+    width: 112px;
+    color: #00b3ea;
+    text-align: center;
+}
+
+.content-tab .caption .tab_bgc,
+.content-tab .byhospitol .tab_bgc,
+.content-tab .bydepartment .tab_bgc {
+    background-color: #60bff2;
+    color: #fff;
+}
+
+.content-tab .byhospitol,
+.content-tab .bydepartment {
+    border: 1px solid #f4f6fa;
+    height: 452px;
+}
+
+.content-tab .byhospitol .list,
+.content-tab .bydepartment .list {
+    height: 26px;
+    line-height: 26px;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-bottom: 1px solid #f4f6fa;
+}
+
+.content-tab .byhospitol .list .link,
+.content-tab .bydepartment .list .link {
+    padding: 0px 10px;
+}
+
+/* 按医院查找的样式 */
+
+.content-tab .hos-con-item .item {
+    float: left;
+    width: 216px;
+    /*356px*/
+    height: 102px;
+    padding: 0 20px 10px 120px;
+    position: relative;
+    font-size: 12px;
+}
+
+.content-tab .byhospitol-content .hos-con-item img {
+    width: 110px;
+    height: 98px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.content-tab .byhospitol-content .hos-con-item .item-name {
+    padding-top: 13px;
+    color: #036EB7;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.content-tab .byhospitol-content .hos-con-item .item-level {
+    float: right;
+    font-size: 12px;
+    color: #979797;
+}
+
+.content-tab .byhospitol-content .hos-con-item .item-address,
+.content-tab .byhospitol-content .hos-con-item .item-phone {
+    line-height: 18px;
+    padding-bottom: 4px;
+    color: #666;
+}
+
+.content-tab .byhospitol-content .hos-con-list .item-name {
+    width: 351px;
+    height: 27px;
+    line-height: 27px;
+    font-size: 14px;
+    float: left;
+    color: #666;
+    font-size: 12px;
+    padding-top: 8px;
+    border-bottom: 1px dashed #dcdddd;
+}
+
+.content-tab .byhospitol-content .hos-con-list .item-level {
+    float: right;
+    color: #979797;
+}
+
+/* .content-tab .block-content .block-text-list .item:nth-child(2n) {
+    margin-left: 13px;
+  } 这个是干嘛的？？？？？*/
+
+.content-tab .byhospitol .list-more,
+.content-tab .bydepartment .list-more {
+    float: right;
+    padding-right: 365px;
+    padding-top: 26px;
+}
+
+/* #footer 页脚 样式*/
+
+.footer {
+    line-height: 70px;
+    font-size: 12px;
+    color: #666666;
+    text-align: center;
+}
+
+/* 这些没做
+.footer .list {
+    position: absolute;
+    width: 293px;
+    height: 109px;
+    top: 45px;
+    right: 0;
+}
+
+.footer .list .link {
+    font-size: 13px;
+    line-height: 29px;
+    width: 97px;
+    display: inline-block;
+    color: #acacac;
+}
+
+.footer .list .link:hover {
+    color: #666;
+}
+
+.footer .list .icp {
+    background: url(../img/footer-split.jpg) top no-repeat;
+    text-align: right;
+    height: 29px;
+    line-height: 29px;
+}
+ */
+
+/* 其他回到顶部 */
+
+.go-top {
+    display: block;
+    position: fixed;
+    right: 2px;
+    bottom: 2px;
+    z-index: 9;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background: rgb(102, 102, 102) url(../img/icon-go-up.png) center no-repeat;
+}
+
+.go-top:hover {
+    background: rgb(102, 102, 102);
+}
+
+.go-top:hover:after {
+    content: '回到顶部';
+    display: block;
+    line-height: 20px;
+    text-align: center;
+}
